@@ -1,4 +1,6 @@
-
+/*! Magnific Popup - v1.0.1 - 2015-12-30
+* http://dimsemenov.com/plugins/magnific-popup/
+* Copyright (c) 2015 Dmitry Semenov; */
 ;(function (factory) { 
 if (typeof define === 'function' && define.amd) { 
  // AMD. Register as an anonymous module. 
@@ -12,7 +14,17 @@ if (typeof define === 'function' && define.amd) {
  } 
  }(function($) { 
 
+/*>>core*/
+/**
+ * 
+ * Magnific Popup Core JS file
+ * 
+ */
 
+
+/**
+ * Private static constants
+ */
 var CLOSE_EVENT = 'Close',
 	BEFORE_CLOSE_EVENT = 'BeforeClose',
 	AFTER_CLOSE_EVENT = 'AfterClose',
@@ -27,7 +39,10 @@ var CLOSE_EVENT = 'Close',
 	PREVENT_CLOSE_CLASS = 'mfp-prevent-close';
 
 
-
+/**
+ * Private vars 
+ */
+/*jshint -W079 */
 var mfp, // As we have only one instance of MagnificPopup object, we define it locally to not to use 'this'
 	MagnificPopup = function(){},
 	_isJQ = !!(window.jQuery),
@@ -39,7 +54,9 @@ var mfp, // As we have only one instance of MagnificPopup object, we define it l
 	_currPopupType;
 
 
-
+/**
+ * Private functions
+ */
 var _mfpOn = function(name, f) {
 		mfp.ev.on(NS + name + EVENT_NS, f);
 	},
